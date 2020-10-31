@@ -1,7 +1,7 @@
 #include "../mean_module/mean_module.h"
 #include "../linear/linear.h"
 #pragma once
-double** transformation(double** arr,int x,int y,int k);
+void transformation(double** arr,int x,int y,int k);
 double partical_correlation_cofficient(double** arr,int x,int k,int y,int l);
 double* stepwise_regression(double** correlation_arr,int x,int y,double f1,double f2);
 double* get_partical_correlation_cofficient_arr(double** correlation_arr,double x,double y);

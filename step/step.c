@@ -72,7 +72,7 @@ double* stepwise_regression(double** correlation_arr,int x,int y,double f1,doubl
 /***************************************************************
 *Name            :min
 *Fun             :求最小值索引的函数
-*InputParaments  :arr为数组，n为数组的长度，m为;
+*InputParaments  :arr为数组，status为是否引入方程，引入为1,不引入为0，n为数组的长度;
 *OutputParaments :回归函数系数数组
 ****************************************************************/
 int min(int* arr,int* status,int n){
@@ -102,6 +102,12 @@ int max(int* arr,int* status,int n){
     free(arr);
     return j;
 }
+/***************************************************************
+*Name            :partical_correlation_cofficient
+*Fun             :偏相关系数函数
+*InputParaments  :arr为数组，x,y分别为行列，k,l对应ppt;
+*OutputParaments :偏相关系数
+****************************************************************/
 double partical_correlation_cofficient(double** arr,int x,int k,int y,int l){
     double result;
     transformation(arr,x,y,l);
@@ -109,6 +115,12 @@ double partical_correlation_cofficient(double** arr,int x,int k,int y,int l){
     transformation(arr,x,y,l);
     return result;
 }
+/***************************************************************
+*Name            :get_partical_correlation_cofficient_arr
+*Fun             :偏相关系数数组函数
+*InputParaments  :correlation_arr为相关系数数组，x,y分别为行列;
+*OutputParaments :偏相关系数数组首地址
+****************************************************************/
 double* get_partical_correlation_cofficient_arr(double** correlation_arr,double x,double y){
    double* a=(double*)malloc(sizeof(double)*(x-1));
    for(int i=0;i<x-1;i++){
@@ -116,7 +128,13 @@ double* get_partical_correlation_cofficient_arr(double** correlation_arr,double 
    }
    return a;
 }
-double** transformation(double** correlation_arr,int x,int y,int k){
+/***************************************************************
+*Name            :transformation
+*Fun             :变换函数
+*InputParaments  :correlation_arr为相关系数数组，x,y分别为行列，k对应ppt;
+*OutputParaments :None
+****************************************************************/
+void transformation(double** correlation_arr,int x,int y,int k){
     double tmp_arr[x][y];
     for(int i=0;i<x;i++){
         for(int j=0;j<y;j++){
