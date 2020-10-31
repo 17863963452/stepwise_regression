@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/liushimin/statistics/practice/test1/c_test/unit2/linear/linear.c
+linear.h
+/home/liushimin/statistics/practice/test1/c_test/unit2/linear/linear.h
+stdlib.h
+-
+
+/home/liushimin/statistics/practice/test1/c_test/unit2/linear/linear.h
+

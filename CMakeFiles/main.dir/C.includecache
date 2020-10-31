@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/liushimin/statistics/c_test/unit3/linear/linear.h
+
+/home/liushimin/statistics/c_test/unit3/main.c
+linear.h
+/home/liushimin/statistics/c_test/unit3/linear.h
+./mean_module/mean_module.h
+/home/liushimin/statistics/c_test/unit3/mean_module/mean_module.h
+./step/step.h
+/home/liushimin/statistics/c_test/unit3/step/step.h
+math.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+/home/liushimin/statistics/c_test/unit3/mean_module/mean_module.h
+stdlib.h
+-
+stdio.h
+-
+math.h
+-
+
+/home/liushimin/statistics/c_test/unit3/step/step.h
+../mean_module/mean_module.h
+/home/liushimin/statistics/c_test/unit3/mean_module/mean_module.h
+../linear/linear.h
+/home/liushimin/statistics/c_test/unit3/linear/linear.h
+
+linear/linear.h
+

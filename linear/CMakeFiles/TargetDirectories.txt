@@ -1,0 +1,3 @@
+/home/liushimin/statistics/practice/test1/c_test/unit2/linear/CMakeFiles/rebuild_cache.dir
+/home/liushimin/statistics/practice/test1/c_test/unit2/linear/CMakeFiles/edit_cache.dir
+/home/liushimin/statistics/practice/test1/c_test/unit2/linear/CMakeFiles/linear.dir

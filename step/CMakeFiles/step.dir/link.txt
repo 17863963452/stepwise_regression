@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstep.a CMakeFiles/step.dir/sort.c.o CMakeFiles/step.dir/step.c.o
+/usr/bin/ranlib libstep.a
