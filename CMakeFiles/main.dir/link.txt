@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/main.dir/main.c.o -o main  -lm linear/liblinear.a mean_module/libmean_module.a step/libstep.a -lm 

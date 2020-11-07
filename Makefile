@@ -156,19 +156,6 @@ mean_module/fast:
 .PHONY : mean_module/fast
 
 #=============================================================================
-# Target rules for targets named linear
-
-# Build rule for target.
-linear: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linear
-.PHONY : linear
-
-# fast build rule for target.
-linear/fast:
-	$(MAKE) $(MAKESILENT) -f linear/CMakeFiles/linear.dir/build.make linear/CMakeFiles/linear.dir/build
-.PHONY : linear/fast
-
-#=============================================================================
 # Target rules for targets named step
 
 # Build rule for target.
@@ -180,6 +167,19 @@ step: cmake_check_build_system
 step/fast:
 	$(MAKE) $(MAKESILENT) -f step/CMakeFiles/step.dir/build.make step/CMakeFiles/step.dir/build
 .PHONY : step/fast
+
+#=============================================================================
+# Target rules for targets named linear
+
+# Build rule for target.
+linear: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linear
+.PHONY : linear
+
+# fast build rule for target.
+linear/fast:
+	$(MAKE) $(MAKESILENT) -f linear/CMakeFiles/linear.dir/build.make linear/CMakeFiles/linear.dir/build
+.PHONY : linear/fast
 
 main.o: main.c.o
 

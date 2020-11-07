@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmean.a CMakeFiles/mean.dir/mean.c.o
-/usr/bin/ranlib libmean.a

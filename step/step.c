@@ -25,49 +25,77 @@ double f_in(double** correlation_arr,int x ,int y,double pcc,int l){
     return result;
 }
 /***************************************************************
+*Name            :predict
+*Fun             :预报函数
+*InputParaments  :arr为二维数组，x,y分别为arr的行列，arr1为预测环流指数数组;
+*OutputParaments :预报结果
+****************************************************************/
+double predict(double** arr,int x,int y,double* arr1){
+    double* a=stepwise_regression(arr,x,y,9,9);
+    double result=0;
+    for(int i=0;i<x-1;i++)
+        result+=(*(a+i)*(*(arr1+i)));
+    result+=*(a+x-1);
+    free(a);
+    return result;
+}
+/***************************************************************
 *Name            :stepwise_regression
 *Fun             :逐步回归函数
 *InputParaments  :correlation_arr为相关系数阵的首地址，x,y分别为data的行列，f1为F alpha1,f2为F alphaa2;
 *OutputParaments :回归函数系数数组
 ****************************************************************/
-double* stepwise_regression(double** correlation_arr,int x,int y,double f1,double f2){
-    double* arr;
+double* stepwise_regression(double** arr,int x,int y,double f1,double f2){
+    double* arr1,**cov_arr,*mean_arr;
+    double sum=0;
+    double** correlation_arr;
+    correlation_arr=correlation(arr,x,y);
     int* status=(int*)malloc(sizeof(int)*(x-1));
     double* result=(double*)malloc(sizeof(double)*(x-1));
+    double* result1=(double*)malloc(sizeof(double)*x);
     int max_index,min_index;
-    arr=get_partical_correlation_cofficient_arr(correlation_arr,x,x);
+    arr1=get_partical_correlation_cofficient_arr(correlation_arr,x,x);
     int l=0,w=0,j=0;
     for(int i=0;i<x-1;i++)
         status[i]=0;
-    max_index=max(sort(arr,x-1),status,x-1);
-    min_index=min(sort(arr,x-1),status,x-1);
+    max_index=max(sort(arr1,x-1),status,x-1);
+    min_index=min(sort(arr1,x-1),status,x-1);
     while(True){
         if(w>=3){
-            if(f_out(correlation_arr,x,y,arr[min_index],l)<f2&&status[min_index]==1){
+            if(f_out(correlation_arr,x,y,arr1[min_index],l)<f2&&status[min_index]==1){
                 transformation(correlation_arr,x,x,min_index);
                 status[min_index]=0;
                 l++;
                 w--;
             }
         }
-        if(f_in(correlation_arr,x,y,arr[max_index],l)>=f1&&status[max_index]==0){
+        if(f_in(correlation_arr,x,y,arr1[max_index],l)>=f1&&status[max_index]==0){
             transformation(correlation_arr,x,x,max_index);
             status[max_index]=1;
             l++;
             w++;
         }else{break;}
-        arr=get_partical_correlation_cofficient_arr(correlation_arr,x,x);
-        max_index=max(sort(arr,x-1),status,x-1);
-        min_index=min(sort(arr,x-1),status,x-1);
+        arr1=get_partical_correlation_cofficient_arr(correlation_arr,x,x);
+        max_index=max(sort(arr1,x-1),status,x-1);
+        min_index=min(sort(arr1,x-1),status,x-1);
     }
     for(int i=0;i<x-1;i++){
         if(status[i]==1)
             result[i]=*(*(correlation_arr+i)+x-1);
         else
             result[i]=0;
-        printf("%f\n",result[i]);
     }
-    return result;
+    cov_arr=cov(arr,x,y);
+    for(int i=0;i<x-1;i++)
+        *(result+i)*=pow((*(*(cov_arr+x-1)+x-1)*(y-1))/(*(*(cov_arr+i)+i)*(y-1)),0.5);
+    mean_arr=mean(arr,x,y);
+    for(int i=0;i<x-1;i++){
+       *(result1+i)=*(result+i);
+       sum+=((*(result+i))*(*(mean_arr+i)));
+    }
+    *(result1+x-1)=*(mean_arr+x-1)-sum;
+    free(result);
+    return result1;
 }
 /***************************************************************
 *Name            :min

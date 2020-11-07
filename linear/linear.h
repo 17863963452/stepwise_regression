@@ -1,4 +1,6 @@
+#include "../step/step.h"
 #pragma once
+double check(double** arr,int x,int y);
 double**  solve(double** arr,int x,int y);
 double** multiple_matrix(double** mat1,int m,int p,double** mat2,int p1,int n);
 double** linear_regression(double** arr,int x,int y);
