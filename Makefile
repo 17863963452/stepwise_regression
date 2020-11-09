@@ -169,17 +169,17 @@ step/fast:
 .PHONY : step/fast
 
 #=============================================================================
-# Target rules for targets named linear
+# Target rules for targets named test
 
 # Build rule for target.
-linear: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linear
-.PHONY : linear
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-linear/fast:
-	$(MAKE) $(MAKESILENT) -f linear/CMakeFiles/linear.dir/build.make linear/CMakeFiles/linear.dir/build
-.PHONY : linear/fast
+test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 main.o: main.c.o
 
@@ -216,10 +216,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... linear"
 	@echo "... main"
 	@echo "... mean_module"
 	@echo "... step"
+	@echo "... test"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

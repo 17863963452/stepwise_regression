@@ -1,3 +1,12 @@
+# 逐步回归
+
+项目结构
+
+![](./image.jpg)
+
+## main.c
+
+```c
 #include "./test/test.h"
 #include "./mean_module/mean_module.h"
 #include "./step/step.h"
@@ -30,3 +39,10 @@ int main(){
     printf("%f\n",r(arr,89,833));
     return 0;
 }
+```
+
+[mean_module](./mean_module/mean_module.html)
+
+[step](./step/step.html)
+
+[test](./test/test.html)

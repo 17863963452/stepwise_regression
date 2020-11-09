@@ -99,14 +99,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/liushimin/statistics/c_test/unit3 && $(CMAKE_COMMAND) -E cmake_progress_start /home/liushimin/statistics/c_test/unit3/CMakeFiles /home/liushimin/statistics/c_test/unit3/linear//CMakeFiles/progress.marks
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linear/all
+	cd /home/liushimin/statistics/c_test/unit3 && $(CMAKE_COMMAND) -E cmake_progress_start /home/liushimin/statistics/c_test/unit3/CMakeFiles /home/liushimin/statistics/c_test/unit3/test//CMakeFiles/progress.marks
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/liushimin/statistics/c_test/unit3/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linear/clean
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -116,12 +116,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linear/preinstall
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linear/preinstall
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -130,46 +130,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-linear/CMakeFiles/linear.dir/rule:
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linear/CMakeFiles/linear.dir/rule
-.PHONY : linear/CMakeFiles/linear.dir/rule
+test/CMakeFiles/test.dir/rule:
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/test.dir/rule
+.PHONY : test/CMakeFiles/test.dir/rule
 
 # Convenience name for target.
-linear: linear/CMakeFiles/linear.dir/rule
+test: test/CMakeFiles/test.dir/rule
 
-.PHONY : linear
+.PHONY : test
 
 # fast build rule for target.
-linear/fast:
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f linear/CMakeFiles/linear.dir/build.make linear/CMakeFiles/linear.dir/build
-.PHONY : linear/fast
+test/fast:
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
+.PHONY : test/fast
 
-linear.o: linear.c.o
+test.o: test.c.o
 
-.PHONY : linear.o
+.PHONY : test.o
 
 # target to build an object file
-linear.c.o:
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f linear/CMakeFiles/linear.dir/build.make linear/CMakeFiles/linear.dir/linear.c.o
-.PHONY : linear.c.o
+test.c.o:
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/test.c.o
+.PHONY : test.c.o
 
-linear.i: linear.c.i
+test.i: test.c.i
 
-.PHONY : linear.i
+.PHONY : test.i
 
 # target to preprocess a source file
-linear.c.i:
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f linear/CMakeFiles/linear.dir/build.make linear/CMakeFiles/linear.dir/linear.c.i
-.PHONY : linear.c.i
+test.c.i:
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/test.c.i
+.PHONY : test.c.i
 
-linear.s: linear.c.s
+test.s: test.c.s
 
-.PHONY : linear.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-linear.c.s:
-	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f linear/CMakeFiles/linear.dir/build.make linear/CMakeFiles/linear.dir/linear.c.s
-.PHONY : linear.c.s
+test.c.s:
+	cd /home/liushimin/statistics/c_test/unit3 && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/test.c.s
+.PHONY : test.c.s
 
 # Help Target
 help:
@@ -179,10 +179,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... linear"
-	@echo "... linear.o"
-	@echo "... linear.i"
-	@echo "... linear.s"
+	@echo "... test"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
